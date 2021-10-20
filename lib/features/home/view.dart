@@ -9,26 +9,6 @@ class HomeView extends GetWidget<NewsController> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<NewsModel>(
-      future: controller.getData(),
-      builder: (context, snapshot) {
-        NewsModel? data = snapshot.data;
-        if (snapshot.hasData) {
-          return ListView.builder(
-            itemCount: data!.articles!.length,
-            itemBuilder: (context, index) => Card(
-              child: Text(data.articles![index].title.toString()),
-              shape: const StadiumBorder(
-
-              ),
-            ),
-          );
-        } else {
-          return Center(
-            child: const CupertinoActivityIndicator(),
-          );
-        }
-      },
-    );
+    return Scaffold();
   }
 }
